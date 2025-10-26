@@ -1,0 +1,44 @@
+.tooltip {
+  position: absolute;
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+.tooltip.show {
+  opacity: 1;
+  transform: translateY(-12px);
+}
+
+.configuration {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.configuration .title {
+  color: #aeac7e;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.range-input {
+  display: flex;
+  flex-direction: column;
+  color: #aeac7e;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.range-input input {
+  margin-top: 18px;
+}
