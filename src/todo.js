@@ -7,6 +7,7 @@
 // TODO: calculating function
 // TODO: check img loading with slow connection
 // TODO: add font to files
+// TODO: check png to svg
 // TODO:
 // TODO: (optional) - variant with tooltip lib
 // TODO: (optional) - move to TS

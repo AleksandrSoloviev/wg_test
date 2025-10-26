@@ -22,40 +22,64 @@
       est laborum
     </h2>
     <div class="tooltip" id="tooltip" role="tooltip">
-      <form>
-        <fieldset class="configuration">
-          <legend class="title">Комплектация</legend>
+      <form class="form-wrapper">
+        <div>
+          <fieldset class="configuration">
+            <legend class="title">Комплектация</legend>
 
-          <label>
-            <input type="radio" name="standard" value="standard" />
-            Стандартная
-          </label>
-
-          <label>
-            <input type="radio" name="elite" value="elite" />
-            Элитная
-          </label>
-
-          <label>
-            <input type="radio" name="premium" value="premium" />
-            Премиум
-          </label>
-        </fieldset>
-
-        <fieldset class="experience">
-          <label class="range-input">
-            Количество боев
-            <div class="range-wrapper">
+            <label class="radio">
               <input
-                type="range"
-                name="experience"
-                class="custom-range"
-                min="0"
-                max="300"
+                type="radio"
+                name="configuration"
+                value="standard"
+                checked
               />
+              <span class="custom-radio"></span>
+              Стандартная
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="configuration" value="elite" />
+              <span class="custom-radio"></span>
+              Элитная
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="configuration" value="premium" />
+              <span class="custom-radio"></span>
+              Премиум
+            </label>
+          </fieldset>
+
+          <fieldset class="experience">
+            <legend class="title">Количество боев</legend>
+            <label class="range-input">
+              <div class="range-wrapper">
+                <input
+                  type="range"
+                  name="experience"
+                  class="custom-range"
+                  min="0"
+                  max="300"
+                />
+              </div>
+            </label>
+          </fieldset>
+        </div>
+        <div class="right-column">
+          <fieldset class="configuration">
+            <legend class="title">Опыт танка</legend>
+            <div class="calculated-points">
+              <img
+                src="./public-files/icons/star.png"
+                alt="Иконка звезда"
+                class="star-icon"
+              />
+              <div id="points" class="points">330</div>
             </div>
-          </label>
-        </fieldset>
+          </fieldset>
+          <input name="count" type="text" class="custom-input" value="150" />
+        </div>
       </form>
     </div>
 

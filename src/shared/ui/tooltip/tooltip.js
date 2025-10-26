@@ -6,6 +6,7 @@ export class TooltipComponent {
     this.hideTimeout = null;
 
     const range = document.querySelector('.custom-range');
+    const input = document.querySelector('.custom-input');
 
     function updateGradient() {
       const value = ((range.value - range.min) / (range.max - range.min)) * 100;
@@ -23,6 +24,27 @@ export class TooltipComponent {
     //   this.isHovered = true;
     //   this.scheduleHide();
     // });
+
+    // при движении ползунка обновляем текстовое поле
+    range.addEventListener('input', () => {
+      input.value = range.value;
+    });
+
+    // при вводе текста обновляем ползунок (в пределах 0–300)
+    input.addEventListener('input', () => {
+      let value = parseInt(input.value, 10);
+
+      if (isNaN(value)) value = 0;
+      if (value < 0) value = 0;
+      if (value > 300) value = 300;
+
+      input.value = value;
+      range.value = value;
+
+      const sliderValue =
+        ((range.value - range.min) / (range.max - range.min)) * 100;
+      range.style.setProperty('--value', `${sliderValue}%`);
+    });
   }
 
   show(target, data) {
