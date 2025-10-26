@@ -7,7 +7,7 @@
   font-size: 13px;
   white-space: nowrap;
   z-index: 1000;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(-8px);
   transition:
     opacity 0.15s ease,
@@ -22,6 +22,10 @@
   display: flex;
   flex-direction: column;
   border: none;
+  gap: 20px;
+
+  font-size: 16px;
+  color: #adadad;
 }
 
 .configuration .title {
@@ -39,6 +43,105 @@
   line-height: 100%;
 }
 
-.range-input input {
-  margin-top: 18px;
+.experience {
+  border: none;
 }
+
+.range-wrapper {
+  padding: 22px;
+  margin-top: 18px;
+  position: relative;
+  border: 1px;
+  border-radius: 4px;
+  border-image: linear-gradient(to bottom, #727272, #252525);
+  background-image: linear-gradient(to bottom, #4f4f4f, #313131);
+}
+
+.range-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #727272, #252525);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.custom-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(to bottom, #262626, #303030);
+  width: 345px;
+  border-radius: 13px;
+  border: 1px;
+  border-image: linear-gradient(to bottom, #3f3f3f, #2a2a2a);
+  padding: 4px;
+  height: 13px;
+  outline: none;
+}
+
+.custom-range::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #3f3f3f, #2a2a2a);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ——— Линия (Chrome, Safari, Edge, Opera) ——— */
+.custom-range::-webkit-slider-runnable-track {
+  height: 5px;
+  background:
+    linear-gradient(to bottom, #ffd100, #997d00) no-repeat,
+    #1d1d1f;
+  background-size: var(--value, 50%) 100%; /* ширина левой части */
+  border-radius: 5px;
+}
+
+/* ——— Ползунок (Chrome, Safari, Edge, Opera) ——— */
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 43px;
+  height: 44px;
+  background: url('../../../../public-files/images/slider/slider-thumb.png')
+    no-repeat center / contain;
+  cursor: pointer;
+  margin-top: -20px; /* чтобы thumb был по центру трека */
+}
+
+/*!* ——— Линия (Firefox) ——— *!*/
+/*.custom-range::-moz-range-track {*/
+/*  height: 6px;*/
+/*  background: red;*/
+/*  border-radius: 3px;*/
+/*}*/
+
+/*!* Заполненная часть (Firefox) *!*/
+/*.custom-range::-moz-range-progress {*/
+/*  background: linear-gradient(to right, #4caf50, #2196f3);*/
+/*  height: 6px;*/
+/*  border-radius: 3px;*/
+/*}*/
+
+/*!* Ползунок (Firefox) *!*/
+/*.custom-range::-moz-range-thumb {*/
+/*  width: 24px;*/
+/*  height: 24px;*/
+/*  background: url('../../../../public-files/images/slider/slider-thumb.png')*/
+/*    no-repeat center / contain;*/
+/*  cursor: pointer;*/
+/*  border: none;*/
+/*}*/

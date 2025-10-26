@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/app/global.css" />
     <link rel="stylesheet" href="./src/shared/ui/tooltip/tooltip.css" />
     <link rel="stylesheet" href="./src/features/cards/cards.css" />
+    <link rel="stylesheet" href="./src/shared/ui/tooltip/tooltip.css" />
   </head>
 
   <body>
@@ -20,6 +21,43 @@
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum
     </h2>
+    <div class="tooltip" id="tooltip" role="tooltip">
+      <form>
+        <fieldset class="configuration">
+          <legend class="title">Комплектация</legend>
+
+          <label>
+            <input type="radio" name="standard" value="standard" />
+            Стандартная
+          </label>
+
+          <label>
+            <input type="radio" name="elite" value="elite" />
+            Элитная
+          </label>
+
+          <label>
+            <input type="radio" name="premium" value="premium" />
+            Премиум
+          </label>
+        </fieldset>
+
+        <fieldset class="experience">
+          <label class="range-input">
+            Количество боев
+            <div class="range-wrapper">
+              <input
+                type="range"
+                name="experience"
+                class="custom-range"
+                min="0"
+                max="300"
+              />
+            </div>
+          </label>
+        </fieldset>
+      </form>
+    </div>
 
     <div id="cards"></div>
 

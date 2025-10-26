@@ -15,7 +15,7 @@ export function renderCards(container, data) {
 
     const image = document.createElement('img');
     image.className = 'image-wrapper';
-    image.alt = 'Изоюражение танка';
+    image.alt = 'Изображение танка';
     image.src = './public-files/images/cards/tank.png';
 
     const name = document.createElement('figcaption');
