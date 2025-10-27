@@ -1,20 +1,73 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #1C1C1E;
-    padding: 20px;
-    max-width: 920px;
+  font-family: Arial, sans-serif;
+  background: #1c1c1e;
+  padding: 20px;
+  max-width: 920px;
 }
 
 .widget-title {
-    font-size: 16px;
-    font-weight: 400;
-    color: #FFFFFF;
-    letter-spacing: 0;
-    line-height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 100%;
 }
 
 #cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+:root {
+  /* Цвета */
+  --color-tooltip-bg: #2a2a2ae5;
+  --color-tooltip-border: #747474;
+  --color-radio-bg: #dddddd;
+  --color-radio-checked: #676767;
+  --color-title: #aeac7e;
+  --color-points: #f8aa31;
+  --color-input-text: #a19d72;
+
+  /* Градиенты */
+  --gradient-range-track: linear-gradient(to bottom, #ffd100, #997d00);
+  --gradient-range-bg: linear-gradient(to bottom, #262626, #303030);
+  --gradient-wrapper-bg: linear-gradient(to bottom, #4f4f4f, #313131);
+
+  /* Размеры */
+  --size-radio: 18px;
+  --size-radio-inner: 10px;
+  --size-thumb-width: 43px;
+  --size-thumb-height: 44px;
+  --size-points-font: 56px;
+
+  --number-spacing-1: 1px;
+  --number-spacing-4: 4px;
+  --number-spacing-8: 8px;
+  --number-spacing-10: 10px;
+  --number-spacing-18: 18px;
+  --number-spacing-20: 20px;
+  --number-spacing-22: 22px;
+  --number-spacing-28: 28px;
+  --number-spacing-30: 30px;
+  --number-spacing-32: 32px;
+  --number-spacing-36: 36px;
+  --number-spacing-38: 38px;
+  --number-spacing-40: 40px;
+  --number-spacing-48: 48px;
+
+  --number-radius-1: 1px;
+  --number-radius-4: 4px;
+
+  --number-size-1: 1px;
+
+  --font-size-18: 18px;
+  --font-size-22: 22px;
+  --font-size-28: 28px;
+  --font-size-34: 34px;
+  --font-size-40: 40px;
+  --font-size-56: 56px;
+
+  --font-weight-400: 400;
+  --font-weight-700: 700;
 }
