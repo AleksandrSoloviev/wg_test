@@ -1,7 +1,6 @@
 .tooltip {
   position: absolute;
-  background: #2a2a2ae5;
-  opacity: 90%;
+  background: #2a2a2ae5 90%;
   padding: 32px 40px;
   font-size: 13px;
   border: 1px solid #747474;
@@ -14,6 +13,10 @@
 .tooltip.show {
   opacity: 1;
   transform: translateY(-12px);
+}
+
+.tooltip-header {
+  display: none;
 }
 
 .form-wrapper {
@@ -247,9 +250,13 @@
 }
 
 @media (max-width: 767px) {
+  .tooltip {
+    padding: 0;
+  }
   .form-wrapper {
     flex-direction: column;
     align-items: center;
+    padding: 30px;
   }
   .configuration {
     flex-direction: row;
@@ -273,5 +280,85 @@
     flex-direction: column-reverse;
     align-items: center;
     gap: 32px;
+  }
+
+  .input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .divider {
+    width: 100%;
+    margin-top: 28px;
+    border-top: 1px solid;
+    border-image: linear-gradient(
+        90deg,
+        #66666600 0%,
+        #666666 20%,
+        #666666 50%,
+        #666666 80%,
+        #66666600 100%
+      )
+      1;
+  }
+  .calculated-points {
+    justify-content: center;
+    gap: 32px;
+  }
+  .calculated-points .points {
+    font-size: 40px;
+  }
+  .star-icon {
+    width: 46px;
+    height: 46px;
+  }
+  .tooltip-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 50px;
+  }
+  .tooltip-header-title {
+    font-size: 28px;
+    color: #b9b9b9;
+  }
+
+  .close-button {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border: none;
+    background-color: #454540;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.2s ease;
+  }
+
+  .close-button:active {
+    background-color: #3a3a35;
+  }
+
+  .close-button::before,
+  .close-button::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #f9f5e1;
+    border-radius: 1px;
+  }
+
+  .close-button::before {
+    transform: rotate(45deg);
+  }
+
+  .close-button::after {
+    transform: rotate(-45deg);
   }
 }

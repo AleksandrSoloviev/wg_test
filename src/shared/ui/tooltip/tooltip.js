@@ -1,6 +1,7 @@
 export class TooltipComponent {
   constructor() {
     this.el = document.getElementById('tooltip1');
+    this.tooltipTitle = document.querySelector('.tooltip-header-title');
 
     this.isHovered = true;
     this.hideTimeout = null;
@@ -61,12 +62,14 @@ export class TooltipComponent {
     });
 
     this.recalc();
+    this.tooltipTitle.textContent = 'Kartochka'; // TODO: delete
   }
 
   show(target, data) {
     this.position(target);
     this.el.style.opacity = 1;
     this.el.style.transform = 'translateY(-12px)';
+    this.tooltipTitle.textContent = data.title;
 
     if (this.hideTimeout) clearTimeout(this.hideTimeout);
   }
