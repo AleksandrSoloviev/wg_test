@@ -1,13 +1,11 @@
-// TODO: style slider
 // TODO: style slider FIREFOX
-// TODO: tooltip content
-// TODO: tooltip content animation
 // TODO: tooltip position
-// TODO: responsive view
-// TODO: calculating function
+// TODO: tooltip click/hover
+// TODO: tooltip arrow
 // TODO: check img loading with slow connection
 // TODO: add font to files
 // TODO: check png to svg
+// TODO: delete commented code!
 // TODO:
 // TODO: (optional) - variant with tooltip lib
 // TODO: (optional) - move to TS
