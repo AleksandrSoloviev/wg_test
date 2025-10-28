@@ -36,7 +36,6 @@ export class TooltipComponent {
     // Инициализация
     this.updateGradient();
     this.recalc();
-    this.tooltipTitle.textContent = 'Kartochka'; // TODO: удалить
   }
 
   // ==========================
@@ -84,7 +83,6 @@ export class TooltipComponent {
     }
     this.el.style.opacity = '1';
     this.el.style.zIndex = '9999';
-    this.el.style.transform = 'translateY(12px)';
     this.tooltipTitle.textContent = data.title;
 
     if (this.hideTimeout) clearTimeout(this.hideTimeout);

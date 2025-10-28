@@ -5,7 +5,6 @@
   background: var(--color-tooltip-bg);
   padding: var(--number-spacing-32) var(--number-spacing-40);
   border: var(--number-radius-1) solid var(--color-tooltip-border);
-  transform: translateY(12px);
   opacity: 0;
   transition:
     opacity 0.15s ease,
@@ -259,7 +258,6 @@
 /* стрелка сверху тултипа (указатель вниз) */
 .tooltip[data-position='bottom'] .tooltip-arrow {
   top: -32px;
-  /*transform: rotate(45deg);*/
 }
 
 @media (max-width: 767px) {
@@ -271,10 +269,14 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 12px;
+    top: 0;
     left: 0;
     border: none;
     background: var(--color-tooltip-bg-mb);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
   }
   .form-wrapper {
     flex-direction: column;
@@ -341,10 +343,11 @@
   .tooltip-header {
     display: flex;
     justify-content: space-between;
-    padding: var(--number-spacing-20) var(--number-spacing-20) 50px;
+    padding: var(--number-spacing-20);
   }
   .tooltip-header-title {
     font-size: var(--font-size-28);
+    margin: 0;
     color: #b9b9b9;
   }
 
