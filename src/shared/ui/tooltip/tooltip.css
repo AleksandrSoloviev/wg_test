@@ -47,11 +47,11 @@
 
 /* Круглая «точка» */
 .custom-radio {
-  width: var(--number-spacing-18);
-  height: var(--number-spacing-18);
+  width: var(--number-size-18);
+  height: var(--number-size-18);
   position: relative;
   background-color: var(--color-radio-bg);
-  border-radius: 50%;
+  border-radius: 10px;
 }
 
 /* Внутренняя точка при выборе */
@@ -61,8 +61,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: var(--number-spacing-10);
-  height: var(--number-spacing-10);
+  width: var(--number-size-10);
+  height: var(--number-size-10);
   background-color: var(--color-radio-checked);
   border-radius: 50%;
 }
@@ -113,6 +113,7 @@
 }
 
 .custom-range {
+  height: 5px;
   -webkit-appearance: none;
   appearance: none;
   display: flex;
@@ -154,7 +155,7 @@
 .custom-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 43px;
+  width: 44px;
   height: 44px;
   background: url('../../../../public-files/images/slider/slider-thumb.png')
     no-repeat center / contain;
@@ -163,29 +164,25 @@
   margin-top: -19px; /* чтобы thumb был по центру трека */
 }
 
-/*!* ——— Линия (Firefox) ——— *!*/
-/*.custom-range::-moz-range-track {*/
-/*  height: 6px;*/
-/*  background: red;*/
-/*  border-radius: 3px;*/
-/*}*/
+/* ——— Линия (Firefox) ——— */
+.custom-range::-moz-range-track {
+  height: 6px;
+  background:
+    var(--gradient-range-track) no-repeat,
+    #1d1d1f;
+  background-size: var(--value, 50%) 100%;
+  border-radius: 3px;
+}
 
-/*!* Заполненная часть (Firefox) *!*/
-/*.custom-range::-moz-range-progress {*/
-/*  background: linear-gradient(to right, #4caf50, #2196f3);*/
-/*  height: 6px;*/
-/*  border-radius: 3px;*/
-/*}*/
-
-/*!* Ползунок (Firefox) *!*/
-/*.custom-range::-moz-range-thumb {*/
-/*  width: 24px;*/
-/*  height: 24px;*/
-/*  background: url('../../../../public-files/images/slider/slider-thumb.png')*/
-/*    no-repeat center / contain;*/
-/*  cursor: pointer;*/
-/*  border: none;*/
-/*}*/
+/* Ползунок (Firefox) */
+.custom-range::-moz-range-thumb {
+  width: 44px;
+  height: 44px;
+  background: url('../../../../public-files/images/slider/slider-thumb.png')
+    no-repeat center / contain;
+  cursor: pointer;
+  border: none;
+}
 
 .star-icon {
   width: 66px;
