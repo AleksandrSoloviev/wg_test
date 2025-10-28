@@ -84,7 +84,7 @@ export class TooltipComponent {
     }
     this.el.style.opacity = '1';
     this.el.style.zIndex = '9999';
-    this.el.style.transform = 'translateY(-12px)';
+    this.el.style.transform = 'translateY(12px)';
     this.tooltipTitle.textContent = data.title;
 
     if (this.hideTimeout) clearTimeout(this.hideTimeout);
@@ -94,14 +94,14 @@ export class TooltipComponent {
     if (this.isHovered) return;
     this.el.style.opacity = '0';
     this.el.style.zIndex = '-1';
-    this.el.style.transform = 'translateY(-8px)';
+    this.el.style.transform = 'translateY(-12px)';
   }
 
   scheduleHide() {
     this.hideTimeout = setTimeout(() => {
       if (!this.isHovered) this.hide();
       this.isHovered = false;
-    }, 2500000);
+    }, 250);
   }
 
   position(target) {
@@ -113,17 +113,17 @@ export class TooltipComponent {
 
     const arrow = this.el.querySelector('.tooltip-arrow');
 
-    let top = rect.top + window.scrollY - ttRect.height - 8; // по умолчанию сверху
+    let top = rect.top + window.scrollY - ttRect.height - 32; // по умолчанию сверху
     let left = rect.left + rect.width / 2 - ttRect.width / 2;
 
     // Проверка: влезает ли тултип по вертикали
-    const fitsTop = rect.top - ttRect.height - 8 >= container.top;
-    const fitsBottom = rect.bottom + ttRect.height + 8 <= container.bottom;
+    const fitsTop = rect.top - ttRect.height - 12 >= container.top;
+    const fitsBottom = rect.bottom + ttRect.height + 12 <= container.bottom;
 
     let position = 'top';
     if (!fitsTop && fitsBottom) {
       // Не влез сверху — ставим снизу
-      top = rect.bottom + window.scrollY + 8;
+      top = rect.bottom + window.scrollY + 12;
       position = 'bottom';
     } else if (!fitsTop && !fitsBottom) {
       // Если вообще не влезает ни сверху, ни снизу — ставим внутри контейнера
@@ -139,8 +139,7 @@ export class TooltipComponent {
 
     if (arrow && window.innerWidth > 768) {
       const arrowCenter = rect.left + rect.width / 2;
-      const tooltipLeft = left;
-      const arrowOffset = arrowCenter - tooltipLeft - 6; // 6 — половина ширины стрелки
+      const arrowOffset = arrowCenter - left - 24;
       arrow.style.left = `${arrowOffset}px`;
     }
 
