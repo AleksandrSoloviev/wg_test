@@ -1,2 +1,2 @@
-// TODO: check img loading with slow connection
+// TODO: backfound opacity for mobile
 // TODO: delete commented code!
