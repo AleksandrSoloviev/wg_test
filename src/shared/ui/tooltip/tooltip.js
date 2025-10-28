@@ -73,6 +73,7 @@ export class TooltipComponent {
   show(target, data) {
     this.position(target);
     this.el.style.opacity = 1;
+    this.el.style.zIndex = '9999';
     this.el.style.transform = 'translateY(-12px)';
     this.tooltipTitle.textContent = data.title;
 
@@ -82,6 +83,7 @@ export class TooltipComponent {
   hide() {
     if (this.isHovered) return;
     this.el.style.opacity = '0';
+    this.el.style.zIndex = '-1';
     this.el.style.transform = 'translateY(-8px)';
   }
 
@@ -92,11 +94,45 @@ export class TooltipComponent {
     }, 250);
   }
 
+  // position(target) {
+  //   const rect = target.getBoundingClientRect();
+  //   const ttRect = this.el.getBoundingClientRect();
+  //   const left = rect.left + rect.width / 2 - ttRect.width / 2;
+  //   const top = rect.top + window.scrollY - ttRect.height - 8;
+  //   this.el.style.left = `${left}px`;
+  //   this.el.style.top = `${top}px`;
+  // }
+
   position(target) {
     const rect = target.getBoundingClientRect();
     const ttRect = this.el.getBoundingClientRect();
-    const left = rect.left + rect.width / 2 - ttRect.width / 2;
-    const top = rect.top + window.scrollY - ttRect.height - 8;
+    const container =
+      this.el.parentElement?.getBoundingClientRect() ||
+      document.body.getBoundingClientRect();
+
+    let top = rect.top + window.scrollY - ttRect.height - 8; // по умолчанию сверху
+    let left = rect.left + rect.width / 2 - ttRect.width / 2;
+
+    // Проверка: влезает ли тултип по вертикали
+    const fitsTop = rect.top - ttRect.height - 8 >= container.top;
+    const fitsBottom = rect.bottom + ttRect.height + 8 <= container.bottom;
+
+    if (!fitsTop && fitsBottom) {
+      // Не влез сверху — ставим снизу
+      top = rect.bottom + window.scrollY + 8;
+    } else if (!fitsTop && !fitsBottom) {
+      // Если вообще не влезает ни сверху, ни снизу — ставим внутри контейнера
+      top = container.top + window.scrollY + 8;
+    }
+
+    // Проверка горизонтального выхода за границы
+    if (left < container.left) {
+      left = container.left + 8;
+    } else if (left + ttRect.width > container.right) {
+      left = container.right - ttRect.width - 8;
+    }
+
+    // Применяем
     this.el.style.left = `${left}px`;
     this.el.style.top = `${top}px`;
   }

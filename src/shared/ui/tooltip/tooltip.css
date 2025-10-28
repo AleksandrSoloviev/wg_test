@@ -3,16 +3,11 @@
   background: var(--color-tooltip-bg) 90%;
   padding: var(--number-spacing-32) var(--number-spacing-40);
   border: var(--number-radius-1) solid var(--color-tooltip-border);
-  z-index: 1000;
   transform: translateY(-8px);
   opacity: 0;
   transition:
     opacity 0.15s ease,
     transform 0.15s ease;
-}
-.tooltip.show {
-  opacity: 1;
-  transform: translateY(-12px);
 }
 
 .tooltip-header {
