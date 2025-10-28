@@ -1,6 +1,4 @@
 // TODO: style slider FIREFOX
-// TODO: tooltip position
-// TODO: tooltip click/hover
 // TODO: tooltip arrow
 // TODO: check img loading with slow connection
 // TODO: add font to files
