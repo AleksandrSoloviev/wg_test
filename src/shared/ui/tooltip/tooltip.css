@@ -274,6 +274,7 @@
     top: 12px;
     left: 0;
     border: none;
+    background: var(--color-tooltip-bg-mb);
   }
   .form-wrapper {
     flex-direction: column;

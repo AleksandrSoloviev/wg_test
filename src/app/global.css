@@ -43,6 +43,7 @@ body {
 :root {
   /* Цвета */
   --color-tooltip-bg: #2a2a2ae5;
+  --color-tooltip-bg-mb: #2a2a2af2;
   --color-tooltip-border: #747474;
   --color-radio-bg: #dddddd;
   --color-radio-checked: #676767;
