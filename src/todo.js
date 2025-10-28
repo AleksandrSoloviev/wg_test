@@ -4,6 +4,7 @@
 // TODO: add font to files
 // TODO: check png to svg
 // TODO: delete commented code!
+// TODO: положение точек в радиобаттонах
 // TODO:
 // TODO: (optional) - variant with tooltip lib
 // TODO: (optional) - move to TS

@@ -82,7 +82,7 @@ export class TooltipComponent {
     if (!isMobile) {
       this.position(target);
     }
-    this.el.style.opacity = 1;
+    this.el.style.opacity = '0.9';
     this.el.style.zIndex = '9999';
     this.el.style.transform = 'translateY(-12px)';
     this.tooltipTitle.textContent = data.title;
@@ -101,7 +101,7 @@ export class TooltipComponent {
     this.hideTimeout = setTimeout(() => {
       if (!this.isHovered) this.hide();
       this.isHovered = false;
-    }, 250);
+    }, 2500000);
   }
 
   position(target) {
@@ -111,6 +111,8 @@ export class TooltipComponent {
       this.el.parentElement?.getBoundingClientRect() ||
       document.body.getBoundingClientRect();
 
+    const arrow = this.el.querySelector('.tooltip-arrow');
+
     let top = rect.top + window.scrollY - ttRect.height - 8; // по умолчанию сверху
     let left = rect.left + rect.width / 2 - ttRect.width / 2;
 
@@ -118,9 +120,11 @@ export class TooltipComponent {
     const fitsTop = rect.top - ttRect.height - 8 >= container.top;
     const fitsBottom = rect.bottom + ttRect.height + 8 <= container.bottom;
 
+    let position = 'top';
     if (!fitsTop && fitsBottom) {
       // Не влез сверху — ставим снизу
       top = rect.bottom + window.scrollY + 8;
+      position = 'bottom';
     } else if (!fitsTop && !fitsBottom) {
       // Если вообще не влезает ни сверху, ни снизу — ставим внутри контейнера
       top = container.top + window.scrollY + 8;
@@ -133,9 +137,17 @@ export class TooltipComponent {
       left = container.right - ttRect.width - 8;
     }
 
+    if (arrow && window.innerWidth > 768) {
+      const arrowCenter = rect.left + rect.width / 2;
+      const tooltipLeft = left;
+      const arrowOffset = arrowCenter - tooltipLeft - 6; // 6 — половина ширины стрелки
+      arrow.style.left = `${arrowOffset}px`;
+    }
+
     // Применяем
     this.el.style.left = `${left}px`;
     this.el.style.top = `${top}px`;
+    this.el.dataset.position = position;
   }
 
   recalc() {

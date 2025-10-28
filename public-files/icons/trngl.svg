@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 72 48">
+  <defs>
+    <style>
+      .st0 {
+      opacity: 1;
+      }
+
+      .st1 {
+      fill: #747474;
+      }
+
+      .st2 {
+      fill: #2a2a2a;
+      }
+    </style>
+  </defs>
+  <g class="st0">
+    <polygon class="st2" points=".63 48 36 .84 71.37 48 .63 48"/>
+    <polygon class="st1" points="1.26 48 36 1.68 70.74 48 72 48 36 0 0 48 1.26 48"/>
+  </g>
+</svg>
