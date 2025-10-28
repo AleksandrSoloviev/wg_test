@@ -14,9 +14,17 @@ body {
 }
 
 #cards {
+  margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  #cards {
+    justify-content: center;
+    margin-top: 34px;
+  }
 }
 
 :root {

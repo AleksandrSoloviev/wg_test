@@ -78,7 +78,10 @@ export class TooltipComponent {
   }
 
   show(target, data) {
-    this.position(target);
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (!isMobile) {
+      this.position(target);
+    }
     this.el.style.opacity = 1;
     this.el.style.zIndex = '9999';
     this.el.style.transform = 'translateY(-12px)';
