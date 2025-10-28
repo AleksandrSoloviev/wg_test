@@ -5,6 +5,7 @@
   border: var(--number-radius-1) solid var(--color-tooltip-border);
   z-index: 1000;
   transform: translateY(-8px);
+  opacity: 0;
   transition:
     opacity 0.15s ease,
     transform 0.15s ease;

@@ -1,7 +1,7 @@
 export class TooltipComponent {
   constructor() {
     // DOM элементы
-    this.el = document.getElementById('tooltip1');
+    this.el = document.getElementById('tooltip');
     this.group = document.getElementById('radio-group');
     this.range = document.querySelector('.custom-range');
     this.input = document.querySelector('.custom-input');
@@ -17,6 +17,14 @@ export class TooltipComponent {
     this.group.addEventListener('change', this.onRadioChange.bind(this));
     this.range.addEventListener('input', this.onRangeInput.bind(this));
     this.input.addEventListener('input', this.onInputChange.bind(this));
+    this.el.addEventListener('mouseenter', () => {
+      this.isHovered = true;
+    });
+
+    this.el.addEventListener('mouseleave', () => {
+      this.isHovered = false;
+      this.scheduleHide();
+    });
 
     // Инициализация
     this.updateGradient();
@@ -72,10 +80,9 @@ export class TooltipComponent {
   }
 
   hide() {
-    // Закомментированное поведение можно раскомментировать при необходимости
-    // if (this.isHovered) return;
-    // this.el.style.opacity = '0';
-    // this.el.style.transform = 'translateY(-8px)';
+    if (this.isHovered) return;
+    this.el.style.opacity = '0';
+    this.el.style.transform = 'translateY(-8px)';
   }
 
   scheduleHide() {
