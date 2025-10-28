@@ -1,6 +1,5 @@
 export class TooltipComponent {
   constructor() {
-    // DOM элементы
     this.el = document.getElementById('tooltip');
     this.group = document.getElementById('radio-group');
     this.range = document.querySelector('.custom-range');
@@ -10,37 +9,29 @@ export class TooltipComponent {
     this.star = document.querySelector('.star-icon');
     this.closeButton = document.querySelector('.close-button');
 
-    // Состояние
     this.isHovered = false;
     this.hideTimeout = null;
 
-    // Подписка на события
     this.group.addEventListener('change', this.onRadioChange.bind(this));
     this.range.addEventListener('input', this.onRangeInput.bind(this));
     this.input.addEventListener('input', this.onInputChange.bind(this));
     this.el.addEventListener('mouseenter', () => {
       this.isHovered = true;
     });
-
     this.el.addEventListener('mouseleave', () => {
       this.isHovered = false;
       this.scheduleHide();
     });
-
     this.closeButton.addEventListener('click', (e) => {
       e.stopPropagation();
       this.isHovered = false;
       this.hide();
     });
 
-    // Инициализация
     this.updateGradient();
     this.recalc();
   }
 
-  // ==========================
-  // Обработчики событий
-  // ==========================
   onRadioChange(e) {
     if (e.target.matches('input[name="configuration"]')) {
       this.recalc();
@@ -65,9 +56,6 @@ export class TooltipComponent {
     this.recalc();
   }
 
-  // ==========================
-  // Вспомогательные методы
-  // ==========================
   updateGradient() {
     const value =
       ((this.range.value - this.range.min) /
@@ -111,24 +99,20 @@ export class TooltipComponent {
 
     const arrow = this.el.querySelector('.tooltip-arrow');
 
-    let top = rect.top + window.scrollY - ttRect.height - 32; // по умолчанию сверху
+    let top = rect.top + window.scrollY - ttRect.height - 32;
     let left = rect.left + rect.width / 2 - ttRect.width / 2;
 
-    // Проверка: влезает ли тултип по вертикали
     const fitsTop = rect.top - ttRect.height - 12 >= container.top;
     const fitsBottom = rect.bottom + ttRect.height + 12 <= container.bottom;
 
     let position = 'top';
     if (!fitsTop && fitsBottom) {
-      // Не влез сверху — ставим снизу
       top = rect.bottom + window.scrollY + 12;
       position = 'bottom';
     } else if (!fitsTop && !fitsBottom) {
-      // Если вообще не влезает ни сверху, ни снизу — ставим внутри контейнера
       top = container.top + window.scrollY + 8;
     }
 
-    // Проверка горизонтального выхода за границы
     if (left < container.left) {
       left = container.left + 8;
     } else if (left + ttRect.width > container.right) {
@@ -141,7 +125,6 @@ export class TooltipComponent {
       arrow.style.left = `${arrowOffset}px`;
     }
 
-    // Применяем
     this.el.style.left = `${left}px`;
     this.el.style.top = `${top}px`;
     this.el.dataset.position = position;
@@ -170,7 +153,6 @@ export class TooltipComponent {
 
     this.calculatedPoint.textContent = `${result}`;
 
-    // перезапуск анимации
     this.calculatedPoint.classList.remove('pulse');
     this.star.classList.remove('pulse');
     void this.calculatedPoint.offsetWidth;

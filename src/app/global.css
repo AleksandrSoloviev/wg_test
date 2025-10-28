@@ -41,7 +41,6 @@ body {
 }
 
 :root {
-  /* Цвета */
   --color-tooltip-bg: #2a2a2ae5;
   --color-tooltip-bg-mb: #2a2a2af2;
   --color-tooltip-border: #747474;
@@ -51,12 +50,10 @@ body {
   --color-points: #f8aa31;
   --color-input-text: #a19d72;
 
-  /* Градиенты */
   --gradient-range-track: linear-gradient(to bottom, #ffd100, #997d00);
   --gradient-range-bg: linear-gradient(to bottom, #262626, #303030);
   --gradient-wrapper-bg: linear-gradient(to bottom, #4f4f4f, #313131);
 
-  /* Размеры */
   --size-radio: 18px;
   --size-radio-inner: 10px;
   --size-thumb-width: 43px;

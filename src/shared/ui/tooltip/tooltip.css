@@ -39,12 +39,10 @@
   cursor: pointer;
 }
 
-/* Скрываем стандартное радио */
 .radio input {
   display: none;
 }
 
-/* Круглая «точка» */
 .custom-radio {
   width: var(--number-size-18);
   height: var(--number-size-18);
@@ -53,7 +51,6 @@
   border-radius: 10px;
 }
 
-/* Внутренняя точка при выборе */
 .radio input:checked + .custom-radio::after {
   content: '';
   position: absolute;
@@ -140,17 +137,15 @@
   pointer-events: none;
 }
 
-/* ——— Линия (Chrome, Safari, Edge, Opera) ——— */
 .custom-range::-webkit-slider-runnable-track {
   height: 5px;
   background:
     var(--gradient-range-track) no-repeat,
     #1d1d1f;
-  background-size: var(--value, 50%) 100%; /* ширина левой части */
+  background-size: var(--value, 50%) 100%;
   border-radius: 5px;
 }
 
-/* ——— Ползунок (Chrome, Safari, Edge, Opera) ——— */
 .custom-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -160,7 +155,7 @@
     no-repeat center / contain;
   cursor: pointer;
   position: relative;
-  margin-top: -19px; /* чтобы thumb был по центру трека */
+  margin-top: -19px;
 }
 
 /* ——— Линия (Firefox) ——— */
@@ -173,7 +168,6 @@
   border-radius: 3px;
 }
 
-/* Ползунок (Firefox) */
 .custom-range::-moz-range-thumb {
   width: 44px;
   height: 44px;
@@ -249,13 +243,11 @@
   height: 32px;
 }
 
-/* стрелка снизу тултипа (указатель вверх) */
 .tooltip[data-position='top'] .tooltip-arrow {
   bottom: -32px;
   transform: rotate(180deg);
 }
 
-/* стрелка сверху тултипа (указатель вниз) */
 .tooltip[data-position='bottom'] .tooltip-arrow {
   top: -32px;
 }
