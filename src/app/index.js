@@ -1,9 +1,11 @@
 import { renderCards } from '../features/cards/render-cards.js';
 
-const data = Array.from({ length: 500 }, (_, i) => ({
+const tnk = ['T-34', 'KV-1', 'T-150', 'IS-3', 'ST-1', 'Object-752'];
+
+const data = tnk.map((name, i) => ({
   id: i + 1,
-  title: `Карточка ${i + 1}`,
-  info: `Описание карточки №${i + 1}`,
+  title: name,
+  info: `Описание танка ${name}`,
 }));
 
 const container = document.getElementById('cards');
