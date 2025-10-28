@@ -82,7 +82,7 @@ export class TooltipComponent {
     if (!isMobile) {
       this.position(target);
     }
-    this.el.style.opacity = '0.9';
+    this.el.style.opacity = '1';
     this.el.style.zIndex = '9999';
     this.el.style.transform = 'translateY(-12px)';
     this.tooltipTitle.textContent = data.title;

@@ -249,13 +249,8 @@
 .tooltip-arrow {
   background-image: url('../../../../public-files/icons/trngl.svg');
   position: absolute;
-  /*backdrop-filter: blur(1px);*/
-  /*background: var(--color-tooltip-bg);*/
   width: 48px;
   height: 32px;
-  /*overflow: hidden;*/
-  /*border-left: var(--number-radius-1) solid var(--color-tooltip-border);*/
-  /*border-top: var(--number-radius-1) solid var(--color-tooltip-border);*/
 }
 
 /* стрелка снизу тултипа (указатель вверх) */
