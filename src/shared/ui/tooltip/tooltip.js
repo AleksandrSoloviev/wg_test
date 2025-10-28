@@ -8,6 +8,7 @@ export class TooltipComponent {
     this.tooltipTitle = document.querySelector('.tooltip-header-title');
     this.calculatedPoint = document.querySelector('.points');
     this.star = document.querySelector('.star-icon');
+    this.closeButton = document.querySelector('.close-button');
 
     // Состояние
     this.isHovered = false;
@@ -24,6 +25,12 @@ export class TooltipComponent {
     this.el.addEventListener('mouseleave', () => {
       this.isHovered = false;
       this.scheduleHide();
+    });
+
+    this.closeButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.isHovered = false;
+      this.hide();
     });
 
     // Инициализация
@@ -93,15 +100,6 @@ export class TooltipComponent {
       this.isHovered = false;
     }, 250);
   }
-
-  // position(target) {
-  //   const rect = target.getBoundingClientRect();
-  //   const ttRect = this.el.getBoundingClientRect();
-  //   const left = rect.left + rect.width / 2 - ttRect.width / 2;
-  //   const top = rect.top + window.scrollY - ttRect.height - 8;
-  //   this.el.style.left = `${left}px`;
-  //   this.el.style.top = `${top}px`;
-  // }
 
   position(target) {
     const rect = target.getBoundingClientRect();

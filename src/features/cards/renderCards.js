@@ -2,6 +2,7 @@ import { TooltipComponent } from '../../shared/ui/tooltip/tooltip.js';
 
 export function renderCards(container, data) {
   const fragment = document.createDocumentFragment();
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
   const tooltipComponent = new TooltipComponent();
 
@@ -29,12 +30,19 @@ export function renderCards(container, data) {
 
     fragment.appendChild(cardWrapper);
 
-    cardWrapper.addEventListener('mouseenter', () =>
-      tooltipComponent.show(cardWrapper, card)
-    );
-    cardWrapper.addEventListener('mouseleave', () =>
-      tooltipComponent.scheduleHide()
-    );
+    if (isMobile) {
+      cardWrapper.addEventListener('click', (e) => {
+        e.stopPropagation();
+        tooltipComponent.show(cardWrapper, card);
+      });
+    } else {
+      cardWrapper.addEventListener('mouseenter', () =>
+        tooltipComponent.show(cardWrapper, card)
+      );
+      cardWrapper.addEventListener('mouseleave', () =>
+        tooltipComponent.scheduleHide()
+      );
+    }
   });
 
   container.appendChild(fragment);
