@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tooltip Demo</title>
+    <meta name="description" content="Tooltip с калькулятором опыта танка" />
+
+    <title>WG Test</title>
 
     <link rel="stylesheet" href="./src/app/global.css" />
     <link rel="stylesheet" href="./src/shared/ui/tooltip/tooltip.css" />
@@ -22,10 +24,14 @@
       est laborum
     </h2>
     <section class="tooltip" id="tooltip" role="dialog">
-      <div class="tooltip-header">
-        <div class="tooltip-header-title"></div>
-        <button type="button" class="close-button"></button>
-      </div>
+      <header class="tooltip-header">
+        <h3 class="tooltip-header-title"></h3>
+        <button
+          type="button"
+          class="close-button"
+          aria-label="Закрыть всплывающее окно"
+        ></button>
+      </header>
       <form class="form-wrapper">
         <div>
           <fieldset id="radio-group" class="configuration">
@@ -38,7 +44,7 @@
                 value="standard"
                 checked
               />
-              <span class="custom-radio">
+              <span class="custom-radio" aria-hidden="true">
                 <span class="custom-radio-checked"></span>
               </span>
               Стандартная
@@ -46,7 +52,7 @@
 
             <label class="radio">
               <input type="radio" name="configuration" value="elite" />
-              <span class="custom-radio">
+              <span class="custom-radio" aria-hidden="true">
                 <span class="custom-radio-checked"></span>
               </span>
               Элитная
@@ -54,7 +60,7 @@
 
             <label class="radio">
               <input type="radio" name="configuration" value="premium" />
-              <span class="custom-radio">
+              <span class="custom-radio" aria-hidden="true">
                 <span class="custom-radio-checked"></span>
               </span>
               Премиум
@@ -63,33 +69,46 @@
 
           <fieldset class="experience">
             <legend class="title">Количество боев</legend>
-            <label class="range-input">
+            <label class="range-input" for="experience-range">
               <div class="range-wrapper">
                 <input
+                  id="experience-range"
                   type="range"
                   name="experience"
                   class="custom-range"
                   min="0"
                   max="300"
+                  aria-valuemin="0"
+                  aria-valuemax="300"
+                  aria-valuenow="150"
+                  aria-label="Количество боев"
                 />
               </div>
             </label>
           </fieldset>
         </div>
         <div class="right-column">
-          <fieldset class="configuration">
+          <fieldset class="configuration" aria-describedby="points">
             <legend class="title">Опыт танка</legend>
             <div class="calculated-points">
               <img
                 src="./public-files/icons/star.png"
-                alt="Иконка звезда"
+                alt="Иконка звезды"
                 class="star-icon"
               />
-              <div id="points" class="points">450</div>
+              <div id="points" class="points" aria-live="polite">450</div>
             </div>
           </fieldset>
+
           <div class="input-wrapper">
-            <input name="count" type="text" class="custom-input" value="150" />
+            <label for="count-input" class="hidden">Количество</label>
+            <input
+              id="count-input"
+              name="count"
+              type="text"
+              class="custom-input"
+              value="150"
+            />
             <div class="divider"></div>
           </div>
         </div>
