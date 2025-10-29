@@ -151,6 +151,7 @@
   cursor: pointer;
   position: relative;
   margin-top: -19px;
+  border-radius: var(--number-radius-44);
 }
 
 .custom-range::-moz-range-track {
@@ -169,6 +170,7 @@
     no-repeat center / contain;
   cursor: pointer;
   border: none;
+  border-radius: var(--number-radius-44);
 }
 
 .star-icon {
