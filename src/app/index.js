@@ -8,5 +8,15 @@ const data = tnk.map((name, i) => ({
   info: `Описание танка ${name}`,
 }));
 
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
+
+const btn = document.getElementById('scroll-to-top-btn');
+btn.addEventListener('click', scrollToTop);
+
 const container = document.getElementById('cards');
 renderCards(container, data);

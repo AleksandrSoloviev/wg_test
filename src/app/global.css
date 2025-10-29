@@ -1,45 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  line-height: 100%;
-  background: #1c1c1e;
-  padding: 20px;
-  max-width: 920px;
-}
-
-.hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-.widget-title {
-  font-size: 16px;
-  font-weight: 400;
-  color: #ffffff;
-  letter-spacing: 0;
-}
-
-#cards {
-  margin-top: 80px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-@media (max-width: 767px) {
-  #cards {
-    justify-content: center;
-    margin-top: 34px;
-  }
-}
-
 :root {
   --color-tooltip-bg: #2a2a2ae5;
   --color-tooltip-bg-mb: #2a2a2af2;
@@ -53,6 +11,7 @@ body {
   --range-track: #1d1d1f;
   --color-gray-light: #b9b9b9;
   --color-gray-dark: #454540;
+  --color-gray-dark-hover: #565654;
   --color-gray-dark-active: #3a3a35;
   --color-cream: #f9f5e1;
 
@@ -130,4 +89,78 @@ body {
 
   --font-weight-400: 400;
   --font-weight-700: 700;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 100%;
+  background: #1c1c1e;
+  padding: 20px;
+  max-width: 920px;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.widget-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0;
+}
+
+#cards {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  background-color: var(--color-gray-dark);
+  border: none;
+  border-radius: 4px;
+
+  background-image: url('../../public-files/icons/arrow-top.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: initial;
+}
+
+.scroll-to-top:active {
+  background-color: var(--color-gray-dark-active);
+}
+
+.scroll-to-top:hover {
+  background-color: var(--color-gray-dark-hover);
+}
+
+@media (max-width: 767px) {
+  #cards {
+    justify-content: center;
+    margin-top: 34px;
+  }
+
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+  }
 }
