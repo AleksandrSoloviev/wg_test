@@ -226,7 +226,7 @@
   }
   50% {
     transform: scale(1.25);
-    color: #fff;
+    color: var(--color-white);
   }
   100% {
     transform: scale(1);
@@ -264,13 +264,13 @@
     background: var(--color-tooltip-bg-mb);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     overflow-y: auto;
   }
   .form-wrapper {
     flex-direction: column;
     align-items: center;
-    padding: var(--number-spacing-30);
+    padding: var(--number-spacing-80) var(--number-spacing-30)
+      var(--number-spacing-30);
   }
   .configuration {
     flex-direction: row;
