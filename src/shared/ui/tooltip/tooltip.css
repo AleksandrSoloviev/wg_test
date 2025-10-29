@@ -133,7 +133,7 @@
 }
 
 .custom-range::-webkit-slider-runnable-track {
-  height: --number-size-5;
+  height: var(--number-size-5);
   background:
     var(--gradient-range-track) no-repeat,
     var(--range-track);
