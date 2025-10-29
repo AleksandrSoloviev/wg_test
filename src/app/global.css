@@ -55,6 +55,7 @@
   --number-spacing-28: 28px;
   --number-spacing-30: 30px;
   --number-spacing-32: 32px;
+  --number-spacing-34: 34px;
   --number-spacing-36: 36px;
   --number-spacing-38: 38px;
   --number-spacing-40: 40px;
@@ -158,13 +159,13 @@ body {
 @media (max-width: 767px) {
   #cards {
     justify-content: center;
-    margin-top: 34px;
+    margin-top: var(--number-spacing-34);
   }
 
   .scroll-to-top {
-    bottom: 20px;
-    right: 20px;
-    width: 36px;
-    height: 36px;
+    bottom: var(--number-spacing-20);
+    right: var(--number-spacing-20);
+    width: var(--number-size-36);
+    height: var(--number-size-36);
   }
 }
