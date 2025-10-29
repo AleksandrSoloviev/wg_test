@@ -10,13 +10,13 @@
   font-family: Arial, sans-serif;
   font-weight: 700;
   font-size: 28px;
-  color: #b9b9b9;
+  color: var(--color-gray-light);
 }
 
 .card-wrapper {
   width: 260px;
-  margin-right: 30px; /* на мой взгляд на самый лучший размер. Лучше использовать размеры степени двойки*/
-  margin-bottom: 80px; /* на мой взгляд на самый лучший размер. Лучше использовать размеры степени двойки*/
+  margin-right: 30px;
+  margin-bottom: 80px;
 }
 
 .figure {

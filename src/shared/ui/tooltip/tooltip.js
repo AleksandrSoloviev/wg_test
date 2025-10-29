@@ -80,7 +80,6 @@ export class TooltipComponent {
     if (this.isHovered) return;
     this.el.style.opacity = '0';
     this.el.style.zIndex = '-1';
-    this.el.style.transform = 'translateY(-12px)';
   }
 
   scheduleHide() {
@@ -93,21 +92,18 @@ export class TooltipComponent {
   position(target) {
     const rect = target.getBoundingClientRect();
     const ttRect = this.el.getBoundingClientRect();
-    const container =
-      this.el.parentElement?.getBoundingClientRect() ||
-      document.body.getBoundingClientRect();
+    const container = document.body.getBoundingClientRect();
 
     const arrow = this.el.querySelector('.tooltip-arrow');
-
-    let top = rect.top + window.scrollY - ttRect.height - 32;
+    let top = rect.top + window.scrollY - ttRect.height - 28;
     let left = rect.left + rect.width / 2 - ttRect.width / 2;
 
     const fitsTop = rect.top - ttRect.height - 12 >= container.top;
-    const fitsBottom = rect.bottom + ttRect.height + 12 <= container.bottom;
+    const fitsBottom = rect.bottom + ttRect.height + 32 <= container.bottom;
 
     let position = 'top';
     if (!fitsTop && fitsBottom) {
-      top = rect.bottom + window.scrollY + 12;
+      top = rect.bottom + window.scrollY + 32;
       position = 'bottom';
     } else if (!fitsTop && !fitsBottom) {
       top = container.top + window.scrollY + 8;

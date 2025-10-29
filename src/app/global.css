@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+  line-height: 100%;
   background: #1c1c1e;
   padding: 20px;
   max-width: 920px;
@@ -23,7 +24,6 @@ body {
   font-weight: 400;
   color: #ffffff;
   letter-spacing: 0;
-  line-height: 100%;
 }
 
 #cards {
@@ -46,13 +46,37 @@ body {
   --color-tooltip-border: #747474;
   --color-radio-bg: #dddddd;
   --color-radio-checked: #676767;
+  --color-radio-title: #adadad;
   --color-title: #aeac7e;
   --color-points: #f8aa31;
   --color-input-text: #a19d72;
+  --range-track: #1d1d1f;
+  --color-gray-light: #b9b9b9;
+  --color-gray-dark: #454540;
+  --color-gray-dark-active: #3a3a35;
+  --color-cream: #f9f5e1;
 
   --gradient-range-track: linear-gradient(to bottom, #ffd100, #997d00);
+  --gradient-range-track-wrapper: linear-gradient(to bottom, #3f3f3f, #2a2a2a);
+  --gradient-range-track-wrapper-border: linear-gradient(
+    to bottom,
+    #2a2a2a,
+    #3f3f3f
+  );
   --gradient-range-bg: linear-gradient(to bottom, #262626, #303030);
+  --gradient-range-boreder-bg: linear-gradient(to bottom, #727272, #252525);
+  --gradient-range-boreder-bg-mask:
+    linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   --gradient-wrapper-bg: linear-gradient(to bottom, #4f4f4f, #313131);
+  --gradient-input: linear-gradient(to bottom, #4d4a3d, #6e653f);
+  --gradient-divider: linear-gradient(
+    90deg,
+    #66666600 0%,
+    #666666 20%,
+    #666666 50%,
+    #666666 80%,
+    #66666600 100%
+  );
 
   --size-radio: 18px;
   --size-radio-inner: 10px;
@@ -76,12 +100,26 @@ body {
   --number-spacing-48: 48px;
 
   --number-radius-1: 1px;
+  --number-radius-3: 3px;
   --number-radius-4: 4px;
+  --number-radius-5: 5px;
+  --number-radius-10: 10px;
+  --number-radius-14: 14px;
 
   --number-size-1: 1px;
+  --number-size-2: 2px;
+  --number-size-5: 5px;
+  --number-size-6: 6px;
   --number-size-10: 10px;
+  --number-size-16: 16px;
   --number-size-18: 18px;
   --number-size-20: 20px;
+  --number-size-32: 32px;
+  --number-size-36: 36px;
+  --number-size-44: 44px;
+  --number-size-46: 46px;
+  --number-size-48: 48px;
+  --number-size-66: 66x;
 
   --font-size-18: 18px;
   --font-size-22: 22px;
