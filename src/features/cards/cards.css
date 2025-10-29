@@ -25,3 +25,9 @@
   align-items: center;
   cursor: pointer;
 }
+
+@media (max-width: 767px) {
+  .card-wrapper {
+    margin-right: 0;
+  }
+}
